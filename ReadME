@@ -1,0 +1,73 @@
+import React, { useEffect, useState } from "react";
+
+const Datafetcher = () => {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [filteredData, setFilteredData] = useState([]);
+  const fetchedData = async () => {
+    setLoading(true);
+    const dataApi = await fetch("https://jsonplaceholder.typicode.com/posts");
+    const response = await dataApi.json();
+    setData(response);
+    setFilteredData(response);
+    // console.log(response);
+    setLoading(false);
+  };
+  useEffect(() => {
+    fetchedData();
+  }, []);
+  const handleClick = () => {
+    fetchedData();
+  };
+  const filtered = () => {
+    const filteredItem = data.filter((item) => item.userId === 1);
+    setFilteredData(filteredItem);
+  };
+  // const filter = () => {
+  //   const filteredItem = data.filter((item) => item.userId === 1);
+  //   setFilteredData(filteredItem);
+  // };
+  return (
+    <div>
+      <button
+        onClick={handleClick}
+        className="m-4 w-[300px] bg-black h-[50px] text-white rounded-lg shadow-xl font-bold"
+      >
+        Fetch Data
+      </button>
+      <button
+        onClick={() => filtered(title)}
+        className="m-4 w-[300px] bg-black h-[50px] text-white rounded-lg shadow-xl font-bold"
+      >
+        Filter Data 1
+      </button>
+      <button
+        onClick={handleClick}
+        className="m-4 w-[300px] bg-black h-[50px] text-white rounded-lg shadow-xl font-bold"
+      >
+        Filter Data 2
+      </button>
+      <button
+        onClick={handleClick}
+        className="m-4 w-[300px] bg-black h-[50px] text-white rounded-lg shadow-xl font-bold"
+      >
+        Filter Data 3
+      </button>
+      {loading === true ? (
+        <h1>Fetching some Data!</h1>
+      ) : (
+        filteredData.map((item) => {
+          return (
+            <>
+              {/* <li>{item.id}</li> */}
+              <li>{item.userId}</li>
+              <li>{item.body}</li>
+            </>
+          );
+        })
+      )}
+    </div>
+  );
+};
+
+export default Datafetcher;
