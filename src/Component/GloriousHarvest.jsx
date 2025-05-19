@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { ShoppingCart, User,  Menu, X,  } from 'lucide-react';
-import vegetable from  '../assets/Vegetable.jpg'
-import grain from  '../assets/grain.jpg'
-import honey from  '../assets/Honey_collection.jpg'
-import maria from  '../assets/maria_gonzalez.jpg'
-import uche from  '../assets/uche_okafor.jpg'
-import protein from  '../assets/protein.jpg'
+import vegetable from  '../assets/Vegetable.jpg';
+import grain from  '../assets/grain.jpg';
+import honey from  '../assets/Honey_collection.jpg';
+import maria from  '../assets/maria_gonzalez.jpg';
+import uche from  '../assets/uche_okafor.jpg';
+import protein from  '../assets/Protein.jpg';
 
 
 
