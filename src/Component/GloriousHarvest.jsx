@@ -5,7 +5,7 @@ import grain from  '../assets/grain.jpg'
 import honey from  '../assets/Honey_collection.jpg'
 import maria from  '../assets/maria_gonzalez.jpg'
 import uche from  '../assets/uche_okafor.jpg'
-import protein from  '../assets/protein_bar.jpg'
+import protein from  '../assets/protein.jpg'
 
 
 
@@ -287,7 +287,7 @@ const GloriousHarvestDemo = () => {
                 </div>
               ))}
             </div>
-            {/* Testimonials */}
+            {/* Testimonials card*/}
             <h3 className="text-2xl font-bold mb-6">Success Stories</h3>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white p-6 rounded-lg shadow-md">
