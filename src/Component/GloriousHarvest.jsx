@@ -1,5 +1,16 @@
 import { useState } from 'react';
 import { ShoppingCart, User,  Menu, X,  } from 'lucide-react';
+import vegetable from  '../assets/Vegetable.jpg'
+import grain from  '../assets/grain.jpg'
+import honey from  '../assets/Honey_collection.jpg'
+import maria from  '../assets/maria_gonzalez.jpg'
+import uche from  '../assets/uche_okafor.jpg'
+import protein from  '../assets/protein_bar.jpg'
+
+
+
+
+
 
 const GloriousHarvestDemo = () => {
   const [activeTab, setActiveTab] = useState('home');
@@ -15,10 +26,10 @@ const GloriousHarvestDemo = () => {
   
   // Products data based on Glorious Harvest offerings
   const products = [
-    { id: 1, name: 'Organic Vegetable Basket', price: 45.99, image: '/api/placeholder/250/150', category: 'Fresh Produce', description: 'Weekly selection of seasonal organic vegetables from local farmers' },
-    { id: 2, name: 'Whole Grain Cereal Pack', price: 29.99, image: '/api/placeholder/250/150', category: 'Essential Staples', description: 'Nutrient-rich whole grain cereals, perfect for healthy breakfasts' },
-    { id: 3, name: 'Protein Supplement Pack', price: 89.99, image: '/api/placeholder/250/150', category: 'Health Foods', description: 'High-quality protein supplements for nutrition and fitness' },
-    { id: 4, name: 'Local Honey Collection', price: 35.50, image: '/api/placeholder/250/150', category: 'Specialty Foods', description: 'Locally sourced honey varieties with natural health benefits' }
+    { id: 1, name: 'Organic Vegetable Basket', price: 45.99, image: vegetable, category: 'Fresh Produce', description: 'Weekly selection of seasonal organic vegetables from local farmers' },
+    { id: 2, name: 'Whole Grain Cereal Pack', price: 29.99, image: grain, category: 'Essential Staples', description: 'Nutrient-rich whole grain cereals, perfect for healthy breakfasts' },
+    { id: 3, name: 'Protein Supplement Pack', price: 89.99, image: protein, category: 'Health Foods', description: 'High-quality protein supplements for nutrition and fitness' },
+    { id: 4, name: 'Local Honey Collection', price: 35.50, image: honey, category: 'Specialty Foods', description: 'Locally sourced honey varieties with natural health benefits' }
   ];
 
   // Banking transactions data
@@ -145,7 +156,9 @@ const GloriousHarvestDemo = () => {
         <div className="container mx-auto flex justify-between items-center p-4">
           <div className="flex items-center space-x-2">
             <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center">
-              <span className="font-bold text-xl">GH</span>
+              <span className="font-bold text-xl">
+                <img src="/Ceo.jpg" alt="Ceo "  className='rounded-full'  />
+              </span>
             </div>
             <h1 className="text-2xl font-bold">Glorious Harvest</h1>
           </div>
@@ -279,9 +292,12 @@ const GloriousHarvestDemo = () => {
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-green-200 rounded-full mr-4"></div>
+                  <div className="w-12 h-12 bg-green-200 rounded-full mr-4">
+                    <img src={maria} alt="maria" className='rounded-full w-[100%] h-[100%] object-cover'  />
+                  </div>
                   <div>
                     <h4 className="font-semibold">Maria Gonzalez</h4>
+                    
                     <p className="text-sm text-gray-600">Network Partner since 2023</p>
                   </div>
                 </div>
@@ -289,7 +305,9 @@ const GloriousHarvestDemo = () => {
               </div>
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-green-200 rounded-full mr-4"></div>
+                  <div className="w-12 h-12 bg-green-200 rounded-full mr-4">
+                     <img src={uche} alt="uche" className='rounded-full w-[100%] h-[100%] object-cover'  />
+                  </div>
                   <div>
                     <h4 className="font-semibold">David Okafor</h4>
                     <p className="text-sm text-gray-600">Network Partner since 2024</p>
@@ -308,7 +326,7 @@ const GloriousHarvestDemo = () => {
             <div className="grid md:grid-cols-4 gap-6 mb-10">
               {products.map(product => (
                 <div key={product.id} className="bg-white p-4 rounded-lg shadow-md">
-                  <img src={product.image} alt={product.name} className="w-full h-40 object-cover mb-4 rounded-md" />
+                  <img src={product.image} alt={product.name} className="w-full h-40 object-cover mb-4 rounded-md flex" />
                   <h4 className="font-semibold text-lg">{product.name}</h4>
                   <p className="text-green-700 font-bold mt-2">${product.price.toFixed(2)}</p>
                   <button
